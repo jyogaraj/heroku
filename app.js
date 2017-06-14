@@ -11,7 +11,7 @@ var index = require('./routes/index');
 var app = express();
 
 // view engine setup
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -49,7 +49,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(app.get('port'), () => {
+app.listen('80'), () => {
   //console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('.'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
 });
