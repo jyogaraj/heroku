@@ -1,8 +1,7 @@
   var express = require('express');
   var path = require('path');
-  //var favicon = require('serve-favicon');
-  //var logger = require('morgan');
-
+  const favicon = require('express-favicon');
+  var logger = require('morgan');
   const sass = require('node-sass-middleware');
 
   var index = require('./routes/index');
@@ -16,7 +15,8 @@
 
   // uncomment after placing your favicon in /public
   //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-  //app.use(logger('dev'));
+  app.use(favicon(__dirname + '/public/favicon.ico'));
+  app.use(logger('dev'));
 
   app.use(express.static(path.join(__dirname, 'public')));
 
